@@ -8,8 +8,6 @@ public class RPSTrainer {
 	Action action;
 
 
-	
-
 
 	public void train(int iterations) {
 		for (int i = 0; i < iterations; i++) {
@@ -72,7 +70,7 @@ public class RPSTrainer {
 		}
 
 	}
-
+	
 	public void setAbstractions(){
 		Abstractions.NUM_ACTIONS = id.size();
 	}
@@ -106,7 +104,7 @@ public class RPSTrainer {
 
 	public static void main(String[] args) {
 		RPSTrainer trainer = new RPSTrainer();		
-		trainer.initilize(Abstractions.RESOURCES, new int[Abstractions.BATTLEFIELDS]);	
+		trainer.initilize(Abstractions.RESOURCES, new int[Abstractions.BATTLEFIELD_VALUES.length]);	
 		trainer.train(1000000);
 		trainer.printResults();
 		

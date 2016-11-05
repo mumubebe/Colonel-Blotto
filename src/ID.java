@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class ID {
 
 
-	int[] b = new int [Abstractions.BATTLEFIELDS];
+	int[] b = new int [Abstractions.BATTLEFIELD_VALUES.length];
 	
 	public ID(int[] a){
 		
