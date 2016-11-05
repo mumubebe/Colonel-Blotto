@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class RPSTrainer {
+public class BlottoTrainer {
 
 
 	public ArrayList<ID> id = new ArrayList<>();
@@ -10,6 +10,7 @@ public class RPSTrainer {
 
 
 	public void train(int iterations) {
+		System.out.println("calculating..");
 		for (int i = 0; i < iterations; i++) {
 
 			player = i % 2;
@@ -78,6 +79,7 @@ public class RPSTrainer {
 
 	public void printResults(){
 		for(int i=0; i<Abstractions.NUM_PLAYERS; i++){
+			System.out.println("Results player: "+i); 
 			for(int j=0; j<Abstractions.NUM_ACTIONS; j++){
 				if(action.getAverageStrategy(i)[j]*100>0.5)
 					System.out.println("["+id.get(j)+"] "+action.getAverageStrategy(i)[j]*100);
@@ -103,7 +105,7 @@ public class RPSTrainer {
 
 
 	public static void main(String[] args) {
-		RPSTrainer trainer = new RPSTrainer();		
+		BlottoTrainer trainer = new BlottoTrainer();		
 		trainer.initilize(Abstractions.RESOURCES, new int[Abstractions.BATTLEFIELD_VALUES.length]);	
 		trainer.train(1000000);
 		trainer.printResults();
