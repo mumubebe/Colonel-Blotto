@@ -6,6 +6,4 @@ Settings:
 <br>
 <i>Abstractions.RESOURCES</i> - Total amount of resources divided between battlefields
 <br>
-<i>Abstractions.BATTLEFIELDS</i> - Number of battlefields
-<br>
 <i>Abstractions.BATTLEFIELD_VALUES</i> - Payoff value for each battlefield
