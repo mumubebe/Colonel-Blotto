@@ -2,12 +2,12 @@ import java.util.Random;
 
 public class Action {
 
-	public  final int NUM_ACTIONS = Abstractions.NUM_ACTIONS;
-	public  final int NUM_PLAYERS = 2;
+	private int NUM_ACTIONS = Abstractions.NUM_ACTIONS;
+	
 	public static final Random random = new Random();
-	double[][] regretSum = new double[NUM_PLAYERS][NUM_ACTIONS], 
-			strategy = new double[NUM_PLAYERS][NUM_ACTIONS], 
-			strategySum = new double[NUM_PLAYERS][NUM_ACTIONS];
+	double[][] regretSum = new double[Abstractions.NUM_PLAYERS][NUM_ACTIONS], 
+			strategy = new double[Abstractions.NUM_PLAYERS][NUM_ACTIONS], 
+			strategySum = new double[Abstractions.NUM_PLAYERS][NUM_ACTIONS];
 
 	public double[] getStrategy(int player) {
 		double normalizingSum = 0;
@@ -50,6 +50,22 @@ public class Action {
 			else
 				avgStrategy[a] = 1.0 / NUM_ACTIONS;
 		return avgStrategy;
+	}
+
+
+	public int getPayoff(int p1[], int p2[]){
+		int v = 0;
+
+		for(int i= 0; i<Abstractions.BATTLEFIELD_VALUES.length; i++){
+			if(p1[i]>p2[i])
+				v +=Abstractions.BATTLEFIELD_VALUES[i];
+			else if(p1[i]==p2[i]) 
+				v+=0;
+			else
+				v-=Abstractions.BATTLEFIELD_VALUES[i];
+
+		}
+		if(v>0) return 1; else if(v==0) return 0; else return -1;
 	}
 
 }
