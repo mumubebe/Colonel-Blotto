@@ -1,5 +1,5 @@
 # Colonel-Blotto
-Colonel Blotto-solver using Counterfactual regret minimization
+Solver for the game Colonel Blotto using a regret minimization-algorithm
 
 <br>
 Settings:
